@@ -6,17 +6,23 @@ typedef struct{
     int length;
 }SqList;
 
+
+//初始化线性表
 void initList(SqList &L){
     for(int i = 0;i<MaxSize;i++)
         L.data[i] = 0;
     L.length = 0;
 }
 
+//在指定位置插入结点
 bool ListInsert(SqList &L,int i,int elem){
     if(L.length >= MaxSize)
         return false;
     if(i<1 || i > L.length+1)
         return false;
+    
+    //将待插入结点后的元素后移一位
+    
     for(int j = L.length;j>=i;j--){
         L.data[j] = L.data[j-1];
     }
@@ -25,6 +31,8 @@ bool ListInsert(SqList &L,int i,int elem){
     return true;
 }
 
+
+//删除元素
 bool ListDelete(SqList &L,int i,int &e){
     if(i<1 || i>L.length)
         return false;
@@ -35,7 +43,9 @@ bool ListDelete(SqList &L,int i,int &e){
     L.length--;
     return true;
 }
-int main01(){
+
+//测试
+int main(){
     SqList L;
     initList(L);
     ListInsert(L,1,5);
