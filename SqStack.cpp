@@ -3,48 +3,49 @@
 
 #define MaxSize 10
 
+//定义栈
 typedef struct Stack{
 	int data[MaxSize];
 	int top;
 }Stack;
 
+//初始化栈
 bool Init_Stack(Stack &S){
 	S.top = -1;
 	return true;
 }
 
+//判断栈是否为空
 bool Stack_Empty(Stack &S){
-	bool isEmpty = false;
-	if(S.top == -1){
-		isEmpty = true;
-	}
-	return isEmpty;
+	return S.top == -1;
 }
 
+//入栈
 bool Push(Stack &S, int x){
 	S.data[++S.top] = x;
 	return true;
 }
 
+//出栈
 int Pop(Stack &S){
 	if(Stack_Empty(S)){
 		printf("The Stack is Empty");
 		return -1;
 
 	}
-
 	return S.data[S.top--];
 }
 
-int GetTop(Stack &S, int &x){
+//获取栈顶元素，而不弹出栈
+int GetTop(Stack &S){
 	if(Stack_Empty(S)){
 		printf("The Stack is Empty");
 		return -1;
 	}
-	x = S.data[S.top];
-	return x;
+	return  S.data[S.top];
 }
 
+//测试
 int main(){
 	Stack S;
 	
