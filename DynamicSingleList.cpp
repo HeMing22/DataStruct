@@ -6,6 +6,7 @@ typedef struct node{
     struct node* next;
 }Node;
 
+//头插法插入结点
 Node* init_HeadInsert(Node* head){
     head = (Node*)malloc(sizeof(Node));
     head->next = NULL;
@@ -15,11 +16,10 @@ Node* init_HeadInsert(Node* head){
         p->next = head->next;
         head->next = p;
     }
-    printf("head->next=%x\n",head->next);
-    printf("head->data=%x\n",head->data);
     return head;
 }
 
+//未插入插入结点
 Node* init_TailInsert(Node* head){
     head = (Node*)malloc(sizeof(Node));
     head->next = NULL;
@@ -35,7 +35,7 @@ Node* init_TailInsert(Node* head){
 }
 
 /*
- * Tail_insert method implements reverse the linkedList
+ * 链表反转实现
  */
 void tailInsert_reverseLinkList(Node* head){
     Node* p = head->next;
@@ -48,6 +48,7 @@ void tailInsert_reverseLinkList(Node* head){
     p->next = NULL;
 }
 
+//按照指定位置插入结点
 void insertNode(Node* head,int pos,int x){
     Node* p = head;
     for(int i = 1;i<pos;i++){
@@ -59,6 +60,7 @@ void insertNode(Node* head,int pos,int x){
     p->next = newNode;
 }
 
+//打印结点
 void printNode(Node* head){
     Node* p = head->next;
     int i = 0;
@@ -68,14 +70,16 @@ void printNode(Node* head){
         p = p->next;
     }
 }
-int main08(){
+
+//测试
+int main(){
     Node* arrList;
     Node* head = init_HeadInsert(arrList);
     printNode(head);
-printf("pretend a spilt line\n");
+    printf("pretend a spilt line\n");
     tailInsert_reverseLinkList(head);
-//    insertNode(head,6,13);
-//    Node* head = init_TailInsert((arrList));
-printNode(head);
+//  insertNode(head,6,13);
+//  Node* head = init_TailInsert((arrList));
+    printNode(head);
 }
 
