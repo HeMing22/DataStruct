@@ -60,6 +60,7 @@ void insertNode(Node* head,int pos,int x){
     p->next = newNode;
 }
 
+
 //打印结点
 void printNode(Node* head){
     Node* p = head->next;
