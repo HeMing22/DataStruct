@@ -62,6 +62,5 @@ int main(){
 	printf("The stack to = %d\n",x);
 	printf("The stack to = %d\n",x1);
 	printf("The stack to = %d\n",x2);
-
 }
 
