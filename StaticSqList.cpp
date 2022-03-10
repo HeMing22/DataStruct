@@ -52,5 +52,4 @@ int main(){
     ListInsert(L,1,6);
     printf("%d\n",L.data[0]);
     printf("%d",L.data[1]);
-
 }
